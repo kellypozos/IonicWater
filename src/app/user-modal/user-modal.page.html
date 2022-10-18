@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <!-- <ion-buttons slot="start">
+      <ion-back-button defaultHref="/" text="" color="primary" mode="ios">
+      </ion-back-button> 
+    </ion-buttons> -->
+    <ion-buttons slot="end">
+      <ion-button color="danger" (click)="closeModal()">
+        Cerrar
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="ion-text-capitalize">{{isUpdate ? 'Editar' : 'Agregar'}} usuario</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+    <ion-item>
+      <ion-label position="floating">Nombre</ion-label>
+      <ion-input [(ngModel)]="data.name" name="name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Correo electrónico</ion-label>
+      <ion-input [(ngModel)]="data.email" name="email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Contraseña</ion-label>
+      <ion-input [(ngModel)]="data.password" name="password"></ion-input>
+    </ion-item>
+    <ion-button type="submit" fill="outline" expand="block" color="primary" class="ion-margin-top">
+      {{isUpdate ? 'Editar' : 'Agregar'}}</ion-button>
+  </form>
+</ion-content>

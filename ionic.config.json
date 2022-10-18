@@ -1,0 +1,7 @@
+{
+  "name": "WaterCare",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
